@@ -1,0 +1,75 @@
+.nav {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, #333333, #333333 80%, rgba(255, 255, 255, 0.07) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo {
+  height: 65px;
+  object-fit: contain;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* 文字 + 底線群組 */
+.nav-right a {
+  display: flex;
+  flex-direction: column;
+  /* 文字 + 底線垂直排列 */
+  align-items: center;
+  justify-content: center;
+  /* 初始文字置中 nav 高度 */
+  height: 100%;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 18px;
+  letter-spacing: 6%;
+  transition: transform 0.25s ease;
+  position: relative;
+  z-index: 1000;
+}
+
+/* 底線初始隱藏，使用 scaleY 從下往上 */
+.nav-right a .underline {
+  width: 50px;
+  height: 6px;
+  background: #EFDFD0;
+  /* hover/active 顏色藍色 */
+  border-radius: 7px;
+  margin-top: 10px;
+  /* 與文字距離 */
+  transform: scaleY(0);
+  /* 初始縮放隱藏 */
+  transform-origin: bottom;
+  /* 從下方開始縮放 */
+  transition: transform 0.25s ease;
+}
+
+/* hover 整組文字 + 底線微上移，底線顯示 */
+.nav-right a:hover {
+  transform: translateY(-10px);
+  /* 整組往上 */
+}
+
+.nav-right a:hover .underline {
+  transform: scaleY(1);
+  /* 從下方出現 */
+}
+
+/* 點擊/active 狀態 */
+.nav-right a:active .underline,
+.nav-right a.active .underline {
+  background: #B6D9FC;
+  /* 藍色 active */
+}

@@ -1,3 +1,4 @@
+
 // ------- 使用 localStorage 儲存答案 -------
 function setAnswer(key, value) {
     localStorage.setItem(key, value);
@@ -21,22 +22,23 @@ const swiper = new Swiper(".mySwiper", {
         depth: 250,
         modifier: 1.5,
         slideShadows: false,
-    }
+    },
 });
 
 // ------- 點擊卡牌 -------
-document.querySelectorAll(".card").forEach(card => {
+document.querySelectorAll(".card").forEach((card) => {
     card.addEventListener("click", () => {
-
         // 取消其他卡牌選取
-        document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+        document
+            .querySelectorAll(".card")
+            .forEach((c) => c.classList.remove("selected"));
         card.classList.add("selected");
 
         let val = card.getAttribute("data-value");
-
+        console.log(val);
         // 判斷目前頁面是 Q1 還是 Q2
         let isQ1 = window.location.pathname.includes("index");
-
+        console.log(val);
         if (isQ1) {
             setAnswer("q1", val);
         } else {
@@ -48,7 +50,7 @@ document.querySelectorAll(".card").forEach(card => {
 // ------- 下一題（Q1）-------
 if (document.getElementById("nextBtn")) {
     document.getElementById("nextBtn").onclick = () => {
-        if (!getAnswer("q1")) {
+        if (getAnswer("")) {
             alert("請先選擇一個選項！");
             return;
         }
@@ -66,7 +68,6 @@ if (document.getElementById("prevBtn") && !location.pathname.includes("Q1")) {
 // ------- 看結果（Q2）-------
 if (document.getElementById("resultBtn")) {
     document.getElementById("resultBtn").onclick = () => {
-
         if (!getAnswer("q2")) {
             alert("請先選擇一個選項！");
             return;

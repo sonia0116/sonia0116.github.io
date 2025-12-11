@@ -1,0 +1,227 @@
+/* ------------------------------
+   基本設定
+------------------------------ */
+
+body {
+  margin: 0;
+  background-color: #333333;
+  font-family: "Chiron GoRound TC", sans-serif;
+}
+
+/* Spacing：4 的倍數 */
+:root {
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-64: 64px;
+}
+
+/* ------------------------------
+   字體系統
+------------------------------ */
+
+h1 {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: calc(96px * 1.5);
+  letter-spacing: 6%;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: calc(32px * 1.5);
+  letter-spacing: 6%;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: calc(24px * 1.5);
+  letter-spacing: 6%;
+}
+
+.body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: calc(16px * 1.5);
+  letter-spacing: 6%;
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: calc(12px * 1.5);
+  letter-spacing: 6%;
+}
+
+/* ------------------------------
+   HERO 區域
+------------------------------ */
+
+.hero {
+  margin-top: var(--space-64);
+  margin-bottom: var(--space-40);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero 圖片 */
+.hero-image-wrapper {
+  width: 1250px;
+  height: 544px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero .btn {
+  margin-top: var(--space-40);
+}
+
+/* ------------------------------
+   BUTTON 規格
+   - 3 尺寸
+   - Level 1 / Level 2
+   - Default / Hover / Active / Disabled
+------------------------------ */
+
+.btn {
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-weight: 700;
+  letter-spacing: 6%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Disabled */
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ---- Button Size ---- */
+
+/* Small (48px) */
+.btn-small {
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 24px;
+  font-size: 16px;
+}
+
+/* Medium (48px) */
+.btn-medium {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 24px;
+  font-size: 16px;
+}
+
+/* Large (88px) */
+.btn-large {
+  height: 88px;
+  padding: 0 40px;
+  border-radius: 44px;
+  font-size: 28px;
+}
+
+
+
+/* ---- Button Level 1（填滿） ---- */
+
+.btn-level1 {
+  background-color: #F4ECE6;
+  color: #333333;
+}
+
+.btn-level1:hover {
+  background-color: #EFDFD0;
+}
+
+.btn-level1:active {
+  background-color: #EAD4C0;
+  transform: scale(0.97);
+}
+
+.btn-level1:disabled {
+  background-color: #dfdfdf;
+  color: #333333;
+  opacity: 0.5;
+
+
+}
+
+/* ---- Button Level 2（外框描邊） ---- */
+
+.btn-level2 {
+  background-color: transparent;
+  border: 4px solid #F4ECE6;
+  color: #F4ECE6;
+}
+
+.btn-level2:hover {
+  background-color: #EAD4C0;
+  border-color: #EAD4C0;
+  color: #333333;
+}
+
+.btn-level2:active {
+  background-color: #EAD4C0;
+  border-color: #EAD4C0;
+  color: #333333;
+  transform: scale(0.97);
+}
+
+.btn-level2:disabled {
+  border-color: #A0A0A0;
+  color: #A0A0A0;
+}
+
+/* 圖片蓋在最上層 */
+.hero-image-full {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 1728px;
+  height: 972px;
+
+
+  z-index: 999;
+  /* 壓在 nav 與 hero 上 */
+  pointer-events: none;
+  /* 不阻擋點擊 nav（可選） */
+}
+
+/* 導覽列放到背景層 */
+.nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* hero 區域也放到背景層 */
+.hero-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
